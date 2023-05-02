@@ -10,11 +10,13 @@
     --slide-4-bg-color: slateblue;
     --btn-next-color: #f4f4f4;
     --btn-prev-color: #333;
+    --animate-speed: 2s;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 2rem;
+    overflow: hidden;
 }
 
 .main-container {
@@ -58,16 +60,30 @@ body {
 .btn{
     padding: .8rem 2rem;
     display: inline-block;
+    transition: all 0.5s ease-in;
 }
 
 .btn-next {
     background: var(--btn-next-color);
+    color: var(--btn-prev-color);
 }
 
 .btn-prev {
     background: var(--btn-prev-color);
-    color: white;
+    color: var(--btn-next-color);
 }
+
+.btn-prev:hover {
+    transition: all 0.5s ease-in;
+    background: var(--btn-next-color);
+    color: var(--btn-prev-color);
+}
+.btn-next:hover {
+    transition: all 0.5s ease-in;
+    background: var(--btn-prev-color);
+    color: var(--btn-next-color);
+}
+
 
 .slide-1 {
     background-color: var(--slide-1-bg-color);
